@@ -1,5 +1,7 @@
-# Guiext
-allow priv_app guiext-server_service:service_manager find;
+# For mt8173 bootup(launcher can not show icon)
+allow priv_app surfaceflinger:fifo_file {read write};
 
-# PQ
-allow priv_app pq_service:service_manager find;
+#============= priv_app ==============
+allow priv_app render_device:chr_file {open read write ioctl };
+allow priv_app dri_device:chr_file {open read write ioctl};
+
